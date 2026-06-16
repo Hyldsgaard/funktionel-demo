@@ -1,0 +1,196 @@
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --text-muted: #7b8794;
+  --border: #e4e7eb;
+  --accent: #4f46e5;
+  --accent-text: #ffffff;
+  --danger: #e12d39;
+  --shadow: 0 10px 30px rgba(31, 41, 51, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  width: 100%;
+  max-width: 520px;
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.app__header {
+  padding: 2rem 2rem 1rem;
+}
+
+.app__title {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.app__subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.new-task {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 2rem 1rem;
+}
+
+.new-task__input {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.new-task__input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.new-task__button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.new-task__button:hover {
+  filter: brightness(1.05);
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.task__checkbox {
+  width: 1.15rem;
+  height: 1.15rem;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.task__text {
+  flex: 1;
+  word-break: break-word;
+}
+
+.task.is-completed .task__text {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.task__delete {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
+}
+
+.task__delete:hover {
+  color: var(--danger);
+  background: rgba(225, 45, 57, 0.08);
+}
+
+.empty-state {
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.app__footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 1rem 2rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.task-count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.filters {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.filter {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filter:hover {
+  border-color: var(--border);
+}
+
+.filter.is-active {
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.clear-completed {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+}
+
+.clear-completed:hover {
+  color: var(--danger);
+}

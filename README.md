@@ -1,35 +1,41 @@
-# Funktionel AI Demo
+# Funktionel Tasks — AI Workflow Demo
 
-A demo project for showcasing the modern AI-assisted development workflow using **VS Code**, **Claude Code**, and **GitHub**.
+A tiny **task-list web app** that doubles as a sandbox for demonstrating the modern
+AI-assisted development workflow using **VS Code**, **Claude Code**, and **GitHub**.
 
-## What This Demo Shows
+🔗 **Live site:** https://hyldsgaard.github.io/funktionel-demo/
 
-- How to use Claude Code as an AI pair programmer in VS Code
-- A typical development workflow: write → review → commit → push
-- How GitHub integrates with AI tooling to speed up development
+## The app
 
-## Tools Used
+A vanilla HTML/CSS/JS task list — no build step, no dependencies. Add tasks, mark them
+complete, filter them, and clear completed ones. State is saved to `localStorage`.
 
-- [VS Code](https://code.visualstudio.com/) — editor
-- [Claude Code](https://claude.ai/code) — AI coding assistant (CLI + IDE extension)
-- [GitHub](https://github.com/) — version control and collaboration
-
-## Getting Started
-
-Clone the repo and open it in VS Code:
+Open it locally:
 
 ```bash
-git clone <repo-url>
-cd funktionel-demo
-code .
+open index.html
+# or serve it:
+python3 -m http.server 8000   # http://localhost:8000
 ```
 
-Then launch Claude Code in the terminal:
+Files:
 
-```bash
-claude
-```
+- `index.html` — markup
+- `styles.css` — styling (uses CSS custom properties for theming)
+- `app.js` — task logic + persistence
+
+## What this demo shows
+
+- Using **Claude Code** as an AI pair programmer in VS Code
+- The **issue → branch → PR → review → merge → ship** loop
+- Letting Claude **solve GitHub issues** and **review pull requests**
+- Working with **branches** and **git worktrees** for parallel work
+- **CI checks** on PRs and **GitHub Pages** deployment
+
+👉 See **[DEMO.md](DEMO.md)** for the step-by-step demo scripts, and the **Issues** tab for
+ready-made tasks to work through.
 
 ## About
 
-Built by [Funktionel AI](https://funktionel.ai) to demonstrate practical AI-assisted software development for customers.
+Built by [Funktionel AI](https://funktionel.ai) to demonstrate practical AI-assisted
+software development for customers.

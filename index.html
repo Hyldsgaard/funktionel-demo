@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funktionel Tasks</title>
+    <meta
+      name="description"
+      content="A tiny task-list demo app for the Funktionel AI development workflow."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1 class="app__title">Funktionel Tasks</h1>
+        <p class="app__subtitle">A tiny demo app — add, complete, and filter your tasks.</p>
+      </header>
+
+      <form id="new-task-form" class="new-task" autocomplete="off">
+        <input
+          id="new-task-input"
+          class="new-task__input"
+          type="text"
+          placeholder="What needs to be done?"
+          aria-label="New task"
+        />
+        <button type="submit" class="new-task__button">Add</button>
+      </form>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+      <p id="empty-state" class="empty-state" hidden>No tasks yet. Add one above!</p>
+
+      <footer class="app__footer">
+        <span id="task-count" class="task-count"></span>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter is-active" data-filter="all">All</button>
+          <button class="filter" data-filter="active">Active</button>
+          <button class="filter" data-filter="completed">Completed</button>
+        </div>
+        <button id="clear-completed" class="clear-completed">Clear completed</button>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
